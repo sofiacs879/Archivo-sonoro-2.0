@@ -1,791 +1,791 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+*{ /** aplica estos estilos a todos los elementos de la página */
+  margin:0; /** elimina el margen externo predeterminado del navegador */
+  padding:0; /** elimina el relleno interno predeterminado del navegador */
+  box-sizing:border-box; /** hace que el padding y borde se incluyan dentro del tamaño del elemento */
 }
 
-body {
+body { /** estilos base para todo el contenido del cuerpo de la página */
 
-  font-family:'Space Grotesk', sans-serif;
+  font-family:'Space Grotesk', sans-serif; /** define la tipografía principal; si no carga usa una sans-serif genérica */
 
-  font-size:16px;
+  font-size:16px; /** tamaño de fuente base para calcular medidas relativas como rem */
 
-  line-height:1.6;
+  line-height:1.6; /** espaciado entre líneas de texto para facilitar la lectura */
 
-  color:#333;
+  color:#333; /** color de texto oscuro por defecto */
 
-  font-weight:400;
+  font-weight:400; /** grosor normal de la fuente */
 
-  -webkit-font-smoothing:antialiased;
+  -webkit-font-smoothing:antialiased; /** suaviza la fuente en navegadores webkit como Chrome y Safari */
 
-  text-rendering:optimizeLegibility;
+  text-rendering:optimizeLegibility; /** mejora la legibilidad del texto activando kerning y ligaturas */
 }
 
 
-:root{
+:root{ /** define variables globales de color y medidas reutilizables en todo el CSS */
 
-  --bg:#05060d;
+  --bg:#05060d; /** color de fondo principal, casi negro azulado */
 
-  --surface:#344274;
+  --surface:#344274; /** color de superficie para tarjetas o secciones */
 
-  --surface2:#151a2d;
+  --surface2:#151a2d; /** color de superficie secundario, más oscuro */
 
-  --border:#ffffff0f;
+  --border:#ffffff0f; /** color de borde blanco con muy poca opacidad */
 
-  --text:#ffffff;
+  --text:#ffffff; /** color de texto principal en blanco */
 
-  --muted:#d7d7e0;
+  --muted:#d7d7e0; /** color de texto secundario, gris claro */
 
-  --cyan:#73a6ff;
+  --cyan:#73a6ff; /** color acento azul cian usado en textos y brillos */
 
-  --purple:#b98cff;
+  --purple:#b98cff; /** color acento morado usado en degradados y detalles */
 
-  --green:#7fffd4;
+  --green:#7fffd4; /** color acento verde menta para títulos de tercer nivel */
 
-  --max:1280px;
+  --max:1280px; /** ancho máximo del contenido para pantallas grandes */
 }
 
-html{
-  scroll-behavior:smooth;
+html{ /** estilos para el elemento raíz de la página */
+  scroll-behavior:smooth; /** activa el desplazamiento suave al hacer clic en enlaces de ancla */
 }
 
-body{
-background:
+body{ /** segundo bloque de estilos para body, define el fondo con degradados */
+background: /** propiedad de fondo con múltiples capas apiladas */
 
-radial-gradient(
-circle at top left,
-#73a6ff,
-transparent 28rem),
+radial-gradient( /** primer gradiente radial, sale desde la esquina superior izquierda */
+circle at top left, /** forma circular centrada en la esquina superior izquierda */
+#73a6ff, /** color inicial del degradado, azul cian */
+transparent 28rem), /** se vuelve transparente a los 28rem de radio */
 
-radial-gradient(
-circle at top right,
-#b98cff,
-transparent 30rem),
+radial-gradient( /** segundo gradiente radial, sale desde la esquina superior derecha */
+circle at top right, /** forma circular centrada en la esquina superior derecha */
+#b98cff, /** color inicial del degradado, morado */
+transparent 30rem), /** se vuelve transparente a los 30rem de radio */
 
-radial-gradient(
-circle at bottom,
-#7fffd4,
-transparent 35rem),
+radial-gradient( /** tercer gradiente radial, sale desde la parte inferior */
+circle at bottom, /** forma circular centrada en la parte inferior */
+#7fffd4, /** color inicial del degradado, verde menta */
+transparent 35rem), /** se vuelve transparente a los 35rem de radio */
 
-linear-gradient(
-180deg,
-#020308 0%,
-#05060d 45%,
-#080d18 100%);
+linear-gradient( /** gradiente lineal de fondo que ocupa toda la pantalla */
+180deg, /** dirección de arriba hacia abajo */
+#020308 0%, /** color muy oscuro al inicio */
+#05060d 45%, /** color casi negro a mitad */
+#080d18 100%); /** color azul muy oscuro al final */
 }
 
 /* HEADER */
 
-header{
+header{ /** estilos para la cabecera principal de la página */
 
-  min-height:60vh;
+  min-height:60vh; /** altura mínima del 60% de la ventana del navegador */
 
-  padding:1rem 1.5rem;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  padding:1rem 1.5rem; /** espacio interno de 1rem arriba/abajo y 1.5rem izquierda/derecha */
+  display:flex; /** activa flexbox para organizar los hijos en fila o columna */
+  flex-direction:column; /** apila los elementos hijos verticalmente */
+  justify-content:center; /** centra los hijos verticalmente dentro del header */
+  align-items:center; /** centra los hijos horizontalmente */
 
-  text-align:center;
+  text-align:center; /** alinea el texto al centro */
 
-  background:
-  linear-gradient(
-  #ffffff08 1px,
-  transparent 1px),
+  background: /** fondo del header con cuadrícula decorativa y degradado */
+  linear-gradient( /** primera capa: líneas horizontales muy sutiles */
+  #ffffff08 1px, /** línea blanca casi invisible de 1px */
+  transparent 1px), /** espacio transparente entre líneas */
 
-  linear-gradient(
-  90deg,
-  #ffffff08 1px,
-  transparent 1px),
+  linear-gradient( /** segunda capa: líneas verticales muy sutiles */
+  90deg, /** dirección horizontal para crear líneas verticales */
+  #ffffff08 1px, /** línea blanca casi invisible de 1px */
+  transparent 1px), /** espacio transparente entre líneas */
 
-  linear-gradient(
-  135deg,
-  #131829fa 0%,
-  #0a0e1cfa 55%,
-  #05060d 100%);
+  linear-gradient( /** tercera capa: degradado principal del header */
+  135deg, /** ángulo diagonal de 135 grados */
+  #131829fa 0%, /** color azul oscuro casi opaco al inicio */
+  #0a0e1cfa 55%, /** color azul más oscuro al 55% */
+  #05060d 100%); /** color casi negro al final */
 
-  background-size:40px 40px,40px 40px,cover;
+  background-size:40px 40px,40px 40px,cover; /** tamaño de cada capa de fondo: la cuadrícula en 40x40px y el degradado cubre todo */
 
-  border-bottom:
-  1px solid #ffffff0d;
+  border-bottom: /** línea inferior del header */
+  1px solid #ffffff0d; /** borde blanco muy transparente de 1px */
 }
 
-header h1{
+header h1{ /** estilos del título principal dentro del header */
 
-  max-width:850px;
+  max-width:850px; /** límite de ancho para que el texto no se extienda demasiado */
 
-  font-size:clamp(2.8rem,6vw,5rem);
+  font-size:clamp(2.8rem,6vw,5rem); /** tamaño fluido: mínimo 2.8rem, preferido 6vw, máximo 5rem */
 
-  line-height:.92;
+  line-height:.92; /** interlineado comprimido para un título grande y compacto */
 
-  letter-spacing:-.05em;
+  letter-spacing:-.05em; /** reduce el espacio entre letras para un look moderno */
 
-  margin-bottom:1rem;
+  margin-bottom:1rem; /** separación inferior entre el título y el párrafo */
 
-  text-align:center;
+  text-align:center; /** centra el texto del título */
 
-  background:
-  linear-gradient(
-  90deg,
-  #d6c3ff 0%,
-  #4085fc 28%,
-  #be62e9 58%,
-  #7fffd4 100%);
+  background: /** degradado de color que se aplica al texto */
+  linear-gradient( /** degradado horizontal de izquierda a derecha */
+  90deg, /** dirección horizontal */
+  #d6c3ff 0%, /** lila claro al inicio */
+  #4085fc 28%, /** azul brillante al 28% */
+  #be62e9 58%, /** morado al 58% */
+  #7fffd4 100%); /** verde menta al final */
 
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  -webkit-background-clip:text; /** recorta el degradado solo sobre el área del texto */
+  -webkit-text-fill-color:transparent; /** hace transparente el relleno del texto para mostrar el degradado */
 }
 
-header p{
+header p{ /** estilos del párrafo de descripción dentro del header */
 
-  max-width:600px;
+  max-width:600px; /** limita el ancho del párrafo para una mejor legibilidad */
 
-  color:#d9d9e4;
+  color:#d9d9e4; /** color gris claro para el texto secundario */
 
-  font-size:.95rem;
+  font-size:.95rem; /** tamaño ligeramente más pequeño que el base */
 
-  opacity:.85;
+  opacity:.85; /** leve transparencia para que parezca menos prominente */
 }
 
 /* NAV */
 
-nav{
+nav{ /** estilos para la barra de navegación */
 
-  position:sticky;
+  position:sticky; /** la barra queda fija al hacer scroll */
 
-  top:0;
+  top:0; /** se pega al borde superior de la ventana */
 
-  z-index:100;
+  z-index:100; /** se superpone sobre otros elementos al hacer scroll */
 
-  display:flex;
+  display:flex; /** coloca los enlaces en fila horizontal */
 
-  justify-content:center;
+  justify-content:center; /** centra los enlaces dentro de la barra */
 
-  gap:1rem;
+  gap:1rem; /** espacio de 1rem entre cada enlace */
 
-  padding:1rem;
+  padding:1rem; /** espacio interno alrededor de los enlaces */
 
-  background:#05060de6;
+  background:#05060de6; /** fondo casi negro con algo de transparencia */
 
-  backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px); /** efecto de desenfoque del contenido detrás de la nav */
 
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid var(--border); /** línea inferior usando la variable de borde definida en :root */
 }
 
-nav a{
+nav a{ /** estilos para cada enlace dentro de la navegación */
 
-  text-decoration:none;
+  text-decoration:none; /** quita el subrayado predeterminado de los enlaces */
 
-  color:white;
+  color:white; /** texto en color blanco */
 
-  padding:.8rem 1.2rem;
+  padding:.8rem 1.2rem; /** espacio interno para dar tamaño al botón */
 
-  border-radius:999px;
+  border-radius:999px; /** bordes completamente redondeados, forma de píldora */
 
-  border:1px solid #ffffff14;
+  border:1px solid #ffffff14; /** borde blanco muy sutil */
 
-  background:#ffffff08;
+  background:#ffffff08; /** fondo blanco casi invisible para un efecto de vidrio */
 
-  font-size:.85rem;
+  font-size:.85rem; /** tamaño de fuente pequeño para los enlaces de nav */
 
-  font-weight:600;
+  font-weight:600; /** fuente seminegrita para mejor legibilidad */
 
-  transition:
-  transform .25s ease,
-  background .25s ease,
-  box-shadow .25s ease;
+  transition: /** define la animación suave para las propiedades que cambian al hover */
+  transform .25s ease, /** transición de 0.25s para el movimiento */
+  background .25s ease, /** transición de 0.25s para el color de fondo */
+  box-shadow .25s ease; /** transición de 0.25s para la sombra */
 }
 
-nav a:hover{
+nav a:hover{ /** estilos que se aplican cuando el cursor pasa sobre un enlace */
 
-  transform:translateY(-2px);
+  transform:translateY(-2px); /** mueve el enlace 2px hacia arriba para efecto de elevación */
 
-  background:linear-gradient(
-  90deg,
-  var(--purple),
-  var(--cyan));
+  background:linear-gradient( /** cambia el fondo a un degradado de morado a cian */
+  90deg, /** dirección horizontal */
+  var(--purple), /** color morado desde la variable */
+  var(--cyan)); /** color cian desde la variable */
 
-  color:#05060d;
+  color:#05060d; /** cambia el color del texto a oscuro para contrastar con el fondo claro */
 
-  box-shadow:
-  0 0 18px #73e8ff33;
+  box-shadow: /** añade un brillo suave alrededor del enlace */
+  0 0 18px #73e8ff33; /** sombra difusa de color cian con baja opacidad */
 }
 
 /*SECTIONS*/
 
-section{
+section{ /** estilos comunes para todas las secciones de contenido */
 
-  width:min(92%,var(--max));
+  width:min(92%,var(--max)); /** ancho del 92% del contenedor o máximo 1280px, lo que sea menor */
 
-  margin:auto;
+  margin:auto; /** centra la sección horizontalmente en la página */
 
-  padding:4rem 0;
+  padding:4rem 0; /** espacio interno arriba y abajo de cada sección */
 }
 
-h2{
+h2{ /** estilos para todos los títulos de segundo nivel */
 
-  font-size:clamp(2rem,4vw,3.2rem);
+  font-size:clamp(2rem,4vw,3.2rem); /** tamaño fluido: mínimo 2rem, preferido 4vw, máximo 3.2rem */
 
-  line-height:1;
+  line-height:1; /** altura de línea igual al tamaño de fuente, sin espacio extra */
 
-  margin-bottom:1.2rem;
+  margin-bottom:1.2rem; /** separación inferior entre el título y el contenido */
 
-  letter-spacing:-.04em;
+  letter-spacing:-.04em; /** espacio entre letras reducido para un look más compacto */
 
-  background:linear-gradient(
-  90deg,
-  var(--cyan),
-  var(--purple));
+  background:linear-gradient( /** degradado horizontal aplicado como color de texto */
+  90deg, /** dirección de izquierda a derecha */
+  var(--cyan), /** comienza con azul cian */
+  var(--purple)); /** termina en morado */
 
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  -webkit-background-clip:text; /** recorta el degradado al área del texto */
+  -webkit-text-fill-color:transparent; /** hace el relleno transparente para ver el degradado */
 }
 
-h3{
+h3{ /** estilos para todos los títulos de tercer nivel */
 
-  color:var(--green);
+  color:var(--green); /** color verde menta desde la variable */
 
-  margin-bottom:1rem;
+  margin-bottom:1rem; /** separación inferior de 1rem */
 }
 
-.categoria{
+.categoria{ /** estilos para las etiquetas de categoría dentro de las secciones */
 
-  font-size:1.1rem;
+  font-size:1.1rem; /** tamaño ligeramente mayor que el base */
 
-  color:#ffd98e;
+  color:#ffd98e; /** color amarillo cálido para resaltar la categoría */
 
-  opacity:.9;
+  opacity:.9; /** leve transparencia */
 
-  margin-top:3rem;
+  margin-top:3rem; /** espacio superior para separarlo del contenido anterior */
 
-  padding-bottom:.8rem;
+  padding-bottom:.8rem; /** espacio inferior antes de la línea decorativa */
 
-  border-bottom:1px solid #ffffff14;
+  border-bottom:1px solid #ffffff14; /** línea inferior sutil para separar visualmente */
 
-  letter-spacing:.08em;
+  letter-spacing:.08em; /** espacio entre letras aumentado para un efecto de etiqueta */
 }
 
-p{
+p{ /** estilos para todos los párrafos de la página */
 
-  color:#f5f5f5;
+  color:#f5f5f5; /** color blanco suave para el texto */
 
-  font-size:.95rem;
+  font-size:.95rem; /** tamaño ligeramente menor que el base */
 
-  line-height:1.9;
+  line-height:1.9; /** altura de línea amplia para mejor legibilidad */
 
-  opacity:.88;
+  opacity:.88; /** leve transparencia para suavizar el contraste */
 
-  margin-bottom:1rem;
+  margin-bottom:1rem; /** separación inferior entre párrafos */
 }
 
 /* INTRO */
 
-#inicio{
+#inicio{ /** estilos para la sección con id "inicio" */
 
-  background:#0a0e1cd1;
+  background:#0a0e1cd1; /** fondo azul muy oscuro con transparencia */
 
-  border:1px solid #ffffff0d;
+  border:1px solid #ffffff0d; /** borde sutil casi invisible */
 
-  border-radius:28px;
+  border-radius:28px; /** esquinas redondeadas para aspecto de tarjeta moderna */
 
-  padding:3rem;
+  padding:3rem; /** espacio interno generoso */
 }
 
-#inicio article{
+#inicio article{ /** estilos para los artículos dentro de la sección inicio */
 
-  margin-top:1.5rem;
+  margin-top:1.5rem; /** separación superior respecto al título */
 
-  padding:1.8rem;
+  padding:1.8rem; /** espacio interno de la tarjeta */
 
-  border-radius:24px;
+  border-radius:24px; /** esquinas redondeadas ligeramente menores que el contenedor */
 
-  background:linear-gradient(
-  135deg,
-  #ffffff0d,
-  #ffffff08);
+  background:linear-gradient( /** degradado diagonal muy sutil para dar profundidad */
+  135deg, /** ángulo diagonal */
+  #ffffff0d, /** blanco casi invisible al inicio */
+  #ffffff08); /** blanco aún más transparente al final */
 
-  border:1px solid #ffffff0f;
+  border:1px solid #ffffff0f; /** borde blanco casi invisible */
 }
 
-#inicio article h4{
+#inicio article h4{ /** estilos para los subtítulos dentro de los artículos de inicio */
 
-  color:white;
+  color:white; /** texto en blanco puro */
 
-  margin-bottom:1rem;
+  margin-bottom:1rem; /** separación inferior */
 
-  font-size:1.15rem;
+  font-size:1.15rem; /** tamaño un poco mayor que el texto base */
 }
 
 /* NOTA */
 
-aside{
+aside{ /** estilos para el elemento lateral de nota o aviso */
 
-  margin-top:1rem;
+  margin-top:1rem; /** separación superior */
 
-  padding:.9rem 1.2rem;
+  padding:.9rem 1.2rem; /** espacio interno */
 
-  border-radius:18px;
+  border-radius:18px; /** esquinas redondeadas */
 
-  background:#ffffff05;
+  background:#ffffff05; /** fondo blanco casi invisible */
 
-  border:1px solid #ffffff08;
+  border:1px solid #ffffff08; /** borde muy tenue */
 
-  max-width:280px;
+  max-width:280px; /** ancho máximo para que no se extienda demasiado */
 
-  opacity:.35;
+  opacity:.35; /** alta transparencia para que sea un elemento secundario */
 }
 
-aside h3{
+aside h3{ /** estilo del título del aside */
 
-  font-size:.9rem;
+  font-size:.9rem; /** tamaño de fuente pequeño */
 }
 
-aside p{
+aside p{ /** estilo del párrafo del aside */
 
-  font-size:.78rem;
+  font-size:.78rem; /** tamaño de fuente más pequeño que el resto */
 }
 
 /* TABLAS */
 
-#tablas{
+#tablas{ /** estilos para la sección de tablas */
 
-  margin-top:3rem;
+  margin-top:3rem; /** separación superior respecto a la sección anterior */
 
-  background:#0f1322;
+  background:#0f1322; /** fondo oscuro azulado */
 
-  border-radius:28px;
+  border-radius:28px; /** esquinas redondeadas tipo tarjeta */
 
-  padding:3rem;
+  padding:3rem; /** espacio interno generoso */
 
-  border:1px solid #ffffff0d;
+  border:1px solid #ffffff0d; /** borde muy sutil */
 }
 
-table{
+table{ /** estilos para las tablas de datos */
 
-  width:100%;
+  width:100%; /** ocupa todo el ancho disponible */
 
-  margin-top:2rem;
+  margin-top:2rem; /** separación superior dentro de la sección */
 
-  border-collapse:collapse;
+  border-collapse:collapse; /** elimina el espacio doble entre celdas */
 
-  overflow:hidden;
+  overflow:hidden; /** oculta el contenido que desborde los bordes redondeados */
 
-  border-radius:20px;
+  border-radius:20px; /** esquinas redondeadas en la tabla */
 }
 
-th{
+th{ /** estilos para las celdas de encabezado de la tabla */
 
-  background:#1a2036;
+  background:#1a2036; /** fondo azul oscuro para el encabezado */
 
-  color:var(--cyan);
+  color:var(--cyan); /** texto en color cian para resaltar */
 
-  text-align:left;
+  text-align:left; /** alinea el texto a la izquierda */
 }
 
 th,
-td{
+td{ /** estilos compartidos entre celdas de encabezado y de datos */
 
-  padding:1rem;
+  padding:1rem; /** espacio interno en cada celda */
 
-  border:1px solid #ffffff0f;
+  border:1px solid #ffffff0f; /** borde sutil entre celdas */
 }
 
-td{
+td{ /** estilos específicos para las celdas de datos */
 
-  background:#12182b;
+  background:#12182b; /** fondo azul muy oscuro */
 
-  color:white;
+  color:white; /** texto en blanco */
 }
 
-tbody tr{
+tbody tr{ /** estilos para cada fila del cuerpo de la tabla */
 
-  transition:
-  background .25s ease,
-  box-shadow .25s ease;
+  transition: /** define animación al pasar el cursor */
+  background .25s ease, /** transición del color de fondo */
+  box-shadow .25s ease; /** transición de la sombra */
 }
 
-tbody td{
+tbody td{ /** transición para las celdas de datos */
 
-  transition:
-  background .25s ease,
-  color .25s ease;
+  transition: /** define animación al pasar el cursor */
+  background .25s ease, /** transición del color de fondo */
+  color .25s ease; /** transición del color de texto */
 }
 
-tbody tr:hover td{
+tbody tr:hover td{ /** estilos de las celdas cuando el cursor pasa sobre la fila */
 
-  background:
-  linear-gradient(
-  90deg,
-  #b98cff29,
-  #73e8ff1a);
+  background: /** fondo con degradado de color al hacer hover */
+  linear-gradient( /** degradado horizontal */
+  90deg, /** dirección izquierda a derecha */
+  #b98cff29, /** morado semitransparente al inicio */
+  #73e8ff1a); /** cian muy transparente al final */
 
-  color:white;
+  color:white; /** mantiene el texto en blanco */
 }
 
 /* AUDIOVISUALES */
 
-#audiovisuales{
+#audiovisuales{ /** estilos para la sección que muestra los elementos multimedia */
 
-  display:grid;
+  display:grid; /** activa el sistema de cuadrícula */
 
-  grid-template-columns:
-  repeat(auto-fit,minmax(420px,1fr));
+  grid-template-columns: /** define columnas responsivas automáticas */
+  repeat(auto-fit,minmax(420px,1fr)); /** crea columnas que se ajustan con mínimo de 420px */
 
-  gap:2rem;
+  gap:2rem; /** espacio de 2rem entre las tarjetas */
 
-  align-items:start;
+  align-items:start; /** alinea las tarjetas al inicio de su fila */
 }
 
 #audiovisuales > h2,
 #audiovisuales > p,
-#audiovisuales > h3{
+#audiovisuales > h3{ /** hace que los títulos y párrafos directos ocupen todo el ancho de la cuadrícula */
 
-  grid-column:1/-1;
+  grid-column:1/-1; /** expande el elemento desde la primera hasta la última columna */
 }
 
-#audiovisuales article{
+#audiovisuales article{ /** estilos para cada tarjeta de contenido audiovisual */
 
-  position:relative;
+  position:relative; /** necesario para que el pseudo-elemento ::before se posicione dentro */
 
-  display:grid;
+  display:grid; /** cuadrícula interna para imagen y texto lado a lado */
 
-  grid-template-columns:170px 1fr;
+  grid-template-columns:170px 1fr; /** columna fija de 170px para la imagen y el resto para el texto */
 
-  align-items:center;
+  align-items:center; /** alinea verticalmente imagen y texto al centro */
 
-  gap:1.2rem;
+  gap:1.2rem; /** espacio entre la imagen y el texto */
 
-  padding:1.2rem;
+  padding:1.2rem; /** espacio interno de la tarjeta */
 
-  min-height:220px;
+  min-height:220px; /** altura mínima para que las tarjetas tengan consistencia visual */
 
-  background:
-  linear-gradient(
-  180deg,
-  #161c30f2 0%,
-  #0d101cfa 100%);
+  background: /** fondo oscuro con degradado vertical */
+  linear-gradient( /** degradado de arriba hacia abajo */
+  180deg, /** dirección vertical */
+  #161c30f2 0%, /** azul oscuro casi opaco al inicio */
+  #0d101cfa 100%); /** azul muy oscuro al final */
 
-  border:1px solid #ffffff0f;
+  border:1px solid #ffffff0f; /** borde muy sutil */
 
-  border-radius:24px;
+  border-radius:24px; /** esquinas redondeadas */
 
-  overflow:hidden;
+  overflow:hidden; /** oculta cualquier contenido que sobresalga del borde redondeado */
 
-  transition:.35s ease;
+  transition:.35s ease; /** animación suave de 0.35s para todos los cambios al hover */
 }
 
-#audiovisuales article::before{
+#audiovisuales article::before{ /** pseudo-elemento para el efecto de brillo al hacer hover */
 
-  content:"";
+  content:""; /** necesario para que el pseudo-elemento exista aunque esté vacío */
 
-  position:absolute;
+  position:absolute; /** se posiciona sobre la tarjeta sin afectar el flujo del documento */
 
-  inset:-2px;
+  inset:-2px; /** se extiende 2px fuera de los bordes de la tarjeta */
 
-  background:
-  radial-gradient(
-  circle at top left,
-  #73e8ff2e,
-  transparent 30%),
+  background: /** degradado radial que simula luz de colores en las esquinas */
+  radial-gradient( /** brillo desde la esquina superior izquierda */
+  circle at top left, /** origen en la esquina superior izquierda */
+  #73e8ff2e, /** cian semitransparente */
+  transparent 30%), /** desvanece a los 30% del radio */
 
-  radial-gradient(
-  circle at bottom right,
-  #b98cff24,
-  transparent 35%);
+  radial-gradient( /** brillo desde la esquina inferior derecha */
+  circle at bottom right, /** origen en la esquina inferior derecha */
+  #b98cff24, /** morado semitransparente */
+  transparent 35%); /** desvanece a los 35% del radio */
 
-  opacity:0;
+  opacity:0; /** invisible por defecto, aparece solo en hover */
 
-  transition:.35s ease;
-}
-
-
-#audiovisuales article:hover{
-
-  transform:
-  translateY(-8px)
-  scale(1.01);
-
-  border:1px solid #73e8ff2e;
-
-  box-shadow:
-  0 10px 35px #00000073,
-  0 0 25px #73e8ff14;
+  transition:.35s ease; /** animación suave de aparición */
 }
 
 
-#audiovisuales article:hover::before{
+#audiovisuales article:hover{ /** estilos que se aplican al pasar el cursor sobre la tarjeta */
 
-  opacity:1;
+  transform: /** mueve y escala la tarjeta levemente */
+  translateY(-8px) /** sube la tarjeta 8px */
+  scale(1.01); /** la agranda un 1% */
+
+  border:1px solid #73e8ff2e; /** cambia el borde a cian semitransparente */
+
+  box-shadow: /** añade sombra y brillo exterior al hover */
+  0 10px 35px #00000073, /** sombra oscura debajo */
+  0 0 25px #73e8ff14; /** brillo cian difuso alrededor */
 }
 
-#audiovisuales article:hover::before{
 
-  opacity:1;
+#audiovisuales article:hover::before{ /** hace visible el brillo al hacer hover */
+
+  opacity:1; /** muestra el pseudo-elemento con plena opacidad */
 }
 
-#audiovisuales article *{
+#audiovisuales article:hover::before{ /** regla duplicada que también hace visible el brillo */
 
-  position:relative;
-
-  z-index:2;
+  opacity:1; /** muestra el pseudo-elemento con plena opacidad */
 }
 
-#audiovisuales article img{
+#audiovisuales article *{ /** aplica a todos los hijos de la tarjeta */
 
-  width:170px;
+  position:relative; /** necesario para que aparezcan por encima del pseudo-elemento ::before */
 
-  height:170px;
-
-  object-fit:cover;
-
-  border-radius:18px;
-
-  transition:
-  transform .45s ease,
-  filter .45s ease;
+  z-index:2; /** asegura que el contenido quede sobre el efecto de brillo */
 }
 
-#audiovisuales article:hover img{
+#audiovisuales article img{ /** estilos para las imágenes dentro de las tarjetas */
 
-  transform:scale(1.04);
+  width:170px; /** ancho fijo de la imagen */
 
-  filter:brightness(1.05);
+  height:170px; /** alto fijo para que sea cuadrada */
+
+  object-fit:cover; /** recorta la imagen para que llene el espacio sin distorsionarse */
+
+  border-radius:18px; /** esquinas redondeadas en la imagen */
+
+  transition: /** animación suave para los cambios al hover */
+  transform .45s ease, /** transición del escalado */
+  filter .45s ease; /** transición del filtro de brillo */
 }
 
-#audiovisuales article h4{
+#audiovisuales article:hover img{ /** estilos de la imagen cuando la tarjeta está en hover */
 
-  color:white;
+  transform:scale(1.04); /** agranda levemente la imagen */
 
-  font-size:1.35rem;
-
-  margin-bottom:.7rem;
+  filter:brightness(1.05); /** aumenta ligeramente el brillo de la imagen */
 }
 
-#audiovisuales article p{
+#audiovisuales article h4{ /** estilos del subtítulo dentro de cada tarjeta audiovisual */
 
-  color:white;
+  color:white; /** texto en blanco */
 
-  opacity:.82;
+  font-size:1.35rem; /** tamaño un poco mayor para destacarlo */
 
-  font-size:.92rem;
+  margin-bottom:.7rem; /** separación inferior */
 }
 
-#audiovisuales article audio{
+#audiovisuales article p{ /** estilos del párrafo dentro de cada tarjeta audiovisual */
 
-  width:100%;
+  color:white; /** texto en blanco */
 
-  margin-top:.8rem;
+  opacity:.82; /** leve transparencia para suavizar */
+
+  font-size:.92rem; /** tamaño ligeramente menor que el base */
+}
+
+#audiovisuales article audio{ /** estilos del reproductor de audio dentro de la tarjeta */
+
+  width:100%; /** ocupa todo el ancho del contenedor */
+
+  margin-top:.8rem; /** separación superior respecto al texto */
 }
 
 /* Videos*/
 
-#videos{
+#videos{ /** estilos para la sección de videos */
 
-  margin-top:5rem;
+  margin-top:5rem; /** separación grande respecto a la sección anterior */
 
-  display:grid;
+  display:grid; /** activa la cuadrícula */
 
-  grid-template-columns:
-  repeat(auto-fit,minmax(360px,1fr));
+  grid-template-columns: /** columnas responsivas automáticas */
+  repeat(auto-fit,minmax(360px,1fr)); /** mínimo de 360px por columna */
 
-  gap:2rem;
+  gap:2rem; /** espacio de 2rem entre tarjetas de video */
 }
 
 #videos > h2,
-#videos > p{
+#videos > p{ /** hace que el título y párrafo directos ocupen todo el ancho */
 
-  grid-column:1/-1;
+  grid-column:1/-1; /** expande desde la primera hasta la última columna */
 }
 
-#videos article{
+#videos article{ /** estilos para cada tarjeta de video */
 
-  position:relative;
+  position:relative; /** necesario para el posicionamiento del pseudo-elemento */
 
-  overflow:hidden;
+  overflow:hidden; /** oculta el contenido que sobresalga del borde redondeado */
 
-  border-radius:28px;
+  border-radius:28px; /** esquinas muy redondeadas */
 
-  background:
-  linear-gradient(
-  180deg,
-  #121626fa 0%,
-  #0a0c14 100%);
+  background: /** fondo oscuro con degradado vertical */
+  linear-gradient( /** degradado de arriba hacia abajo */
+  180deg, /** dirección vertical */
+  #121626fa 0%, /** azul oscuro casi opaco al inicio */
+  #0a0c14 100%); /** azul muy oscuro al final */
 
-  border:1px solid #ffffff0f;
+  border:1px solid #ffffff0f; /** borde muy sutil */
 
-  transition:
-  transform .35s ease,
-  border .35s ease,
-  box-shadow .35s ease;
+  transition: /** animación suave para los cambios al hover */
+  transform .35s ease, /** transición de movimiento */
+  border .35s ease, /** transición del borde */
+  box-shadow .35s ease; /** transición de la sombra */
 }
 
 /* glow elegante */
 
-#videos article::before{
+#videos article::before{ /** pseudo-elemento para el efecto de brillo en las tarjetas de video */
 
-  content:"";
+  content:""; /** necesario para que el pseudo-elemento exista */
 
-  position:absolute;
+  position:absolute; /** se posiciona dentro de la tarjeta */
 
-  inset:-2px;
+  inset:-2px; /** cubre levemente más allá del borde */
 
-  background:
-  radial-gradient(
-  circle at top left,
-  #b98cff2e,
-  transparent 30%),
+  background: /** degradado de brillo en las esquinas */
+  radial-gradient( /** brillo desde la esquina superior izquierda */
+  circle at top left, /** origen en la esquina superior izquierda */
+  #b98cff2e, /** morado semitransparente */
+  transparent 30%), /** desvanece a los 30% */
 
-  radial-gradient(
-  circle at bottom right,
-  #73e8ff24,
-  transparent 35%);
+  radial-gradient( /** brillo desde la esquina inferior derecha */
+  circle at bottom right, /** origen en la esquina inferior derecha */
+  #73e8ff24, /** cian semitransparente */
+  transparent 35%); /** desvanece a los 35% */
 
-  opacity:0;
+  opacity:0; /** invisible por defecto */
 
-  transition:.35s ease;
+  transition:.35s ease; /** animación suave de aparición */
 }
 
-#videos article:hover::before{
+#videos article:hover::before{ /** muestra el brillo cuando se hace hover sobre la tarjeta de video */
 
-  opacity:1;
+  opacity:1; /** hace visible el pseudo-elemento */
 }
 
-#videos article:hover{
+#videos article:hover{ /** estilos de la tarjeta de video al pasar el cursor */
 
-  transform:
-  translateY(-10px);
+  transform: /** desplaza la tarjeta hacia arriba */
+  translateY(-10px); /** sube 10px */
 
-  border:1px solid #b98cff33;
+  border:1px solid #b98cff33; /** borde morado semitransparente al hover */
 
-  box-shadow:
-  0 15px 45px #00000080;
+  box-shadow: /** sombra intensa debajo de la tarjeta */
+  0 15px 45px #00000080; /** sombra oscura con buena difusión */
 }
 
-#videos article *{
+#videos article *{ /** aplica a todos los hijos de la tarjeta de video */
 
-  position:relative;
+  position:relative; /** necesario para que aparezcan sobre el efecto de brillo */
 
-  z-index:2;
+  z-index:2; /** asegura que el contenido quede encima del pseudo-elemento */
 }
 
-video{
+video{ /** estilos para el elemento de video */
 
-  width:100%;
+  width:100%; /** ocupa todo el ancho del contenedor */
 
-  aspect-ratio:16/9;
+  aspect-ratio:16/9; /** mantiene proporciones de pantalla ancha */
 
-  object-fit:cover;
+  object-fit:cover; /** recorta el video para llenar el espacio sin distorsión */
 
-  display:block;
+  display:block; /** elimina el espacio inferior que dejan los elementos inline por defecto */
 
-  border-bottom:
-  1px solid #ffffff0f;
+  border-bottom: /** línea separadora entre el video y el texto */
+  1px solid #ffffff0f; /** borde blanco muy transparente */
 
-  transition:
-  transform .45s ease;
+  transition: /** animación suave para el zoom del video */
+  transform .45s ease; /** transición de 0.45s para el escalado */
 }
 
-#videos article:hover video{
+#videos article:hover video{ /** escala el video al hacer hover sobre la tarjeta */
 
-  transform:scale(1.03);
+  transform:scale(1.03); /** agranda levemente el video */
 }
 
-#videos .contenido{
+#videos .contenido{ /** estilos para el bloque de texto debajo del video */
 
-  padding:1.5rem;
+  padding:1.5rem; /** espacio interno alrededor del texto */
 }
 
-#videos .contenido h4{
+#videos .contenido h4{ /** estilos del subtítulo en el bloque de contenido del video */
 
-  color:white;
+  color:white; /** texto en blanco */
 
-  font-size:1.3rem;
+  font-size:1.3rem; /** tamaño destacado */
 
-  margin-bottom:.8rem;
+  margin-bottom:.8rem; /** separación inferior */
 }
 
-#videos .contenido p{
+#videos .contenido p{ /** estilos del párrafo en el bloque de contenido del video */
 
-  color:white;
+  color:white; /** texto en blanco */
 
-  opacity:.82;
+  opacity:.82; /** leve transparencia */
 
-  line-height:1.7;
+  line-height:1.7; /** altura de línea para buena legibilidad */
 
-  font-size:.92rem;
+  font-size:.92rem; /** tamaño ligeramente menor que el base */
 }
 
 /*  FOOTER */
 
-footer{
+footer{ /** estilos para el pie de página */
 
-  margin-top:3rem;
+  margin-top:3rem; /** separación superior */
 
-  padding:1rem;
+  padding:1rem; /** espacio interno */
 
-  background:transparent;
+  background:transparent; /** fondo sin color, hereda el del body */
 
-  border:none;
+  border:none; /** sin borde */
 
-  text-align:center;
+  text-align:center; /** texto centrado */
 
-  opacity:.35;
+  opacity:.35; /** muy transparente para que sea discreto */
 }
 
-footer p{
+footer p{ /** estilos del texto dentro del footer */
 
-  margin:.2rem 0;
+  margin:.2rem 0; /** pequeño margen vertical entre líneas */
 
-  font-size:.78rem;
+  font-size:.78rem; /** tamaño de fuente pequeño */
 
-  color:#cfcfe0;
+  color:#cfcfe0; /** color gris azulado claro */
 }
 
 /* RESPONSIVE*/
 
-@media(max-width:900px){
+@media(max-width:900px){ /** estilos que se aplican cuando la pantalla mide 900px o menos */
 
   #audiovisuales,
-  #videos{
+  #videos{ /** hace que ambas secciones usen una sola columna en pantallas medianas */
 
-    grid-template-columns:1fr;
+    grid-template-columns:1fr; /** una sola columna que ocupa todo el ancho */
   }
 
-  #audiovisuales article{
+  #audiovisuales article{ /** ajusta el diseño interno de las tarjetas audiovisuales */
 
-    grid-template-columns:1fr;
+    grid-template-columns:1fr; /** cambia a una columna para apilar imagen y texto */
 
-    min-height:auto;
+    min-height:auto; /** elimina la altura mínima fija */
   }
 
-  #audiovisuales article img{
+  #audiovisuales article img{ /** ajusta el tamaño de la imagen en pantallas medianas */
 
-    width:100%;
+    width:100%; /** ocupa todo el ancho de la tarjeta */
 
-    height:230px;
+    height:230px; /** altura fija para la imagen en vista apilada */
   }
 }
 
-@media(max-width:768px){
+@media(max-width:768px){ /** estilos que se aplican cuando la pantalla mide 768px o menos */
 
-  nav{
+  nav{ /** ajuste de la navegación en pantallas pequeñas */
 
-    flex-wrap:wrap;
+    flex-wrap:wrap; /** permite que los enlaces se distribuyan en varias líneas */
   }
 
-  section{
+  section{ /** reduce el padding vertical en pantallas pequeñas */
 
-    padding:3rem 0;
+    padding:3rem 0; /** menos espacio que en escritorio */
   }
 
   #inicio,
-  #tablas{
+  #tablas{ /** reduce el padding interno en las secciones contenedor */
 
-    padding:2rem;
+    padding:2rem; /** menos espacio interno que en escritorio */
   }
 
-  header h1{
+  header h1{ /** reduce el tamaño del título en pantallas pequeñas */
 
-    font-size:3rem;
+    font-size:3rem; /** tamaño fijo más pequeño para móviles */
   }
 }
